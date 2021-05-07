@@ -24,8 +24,16 @@ w=2
 x=1
 So set a file to permission on file to read -rwxr----- you would enter "chamod 740 file".
 
+chown command:
 chown command to change owner and group assignments,the sytax is:
 chown owner:group filename
 So to change the owner of the file to user and group to family you enter
 chown user:family file.
+
+chmod command:
+chmod command allows you to change the permissions on a file using either a symbolic or a numeric mode.
+Syntax:
+$chmode g=r filename
+
+
          
