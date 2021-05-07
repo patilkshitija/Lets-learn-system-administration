@@ -1,0 +1,47 @@
+Linux File System :
+                  - Linux file system has a hierarchal file structure as it contains a root directory and its subdirectories.
+                  - All the file systems are part of a single directory.
+Following are the some directories in linux file system:
+                  - / is root directory which should contain a only directories needed at the top level of the system.
+                  - /bin is where the executable files are located.Available to all users.
+                  - /dev these are device drivers.
+                  - /etc supervisor directory commands where to send critical message.
+                  - /lib contains shared library files.
+                  - /boot files for booting the system.
+                  - /home contains the hoe directory for users and another account.
+Some commands are as follws:
+                  1. pwd - To find out the path of the current working directory.
+                           Ex. /home/username.
+                  2. cd  - Change the current working directory.
+                           Ex. /home/username/Documents.
+                  3. ls  - Used to view the content of directory.
+                           Ex. ls/home/username/Documents.
+                  4. cat - Used to list the content of file.
+                  5. cp  - Copy the file from current directory.
+                           Ex. cp file.txt
+                  6. mv  - Used to move or rename the file.
+                           Ex. mv file.txt/home/username/Documents.
+                  7. mkdir - Used to make a new directory.
+                           Ex. mkdir/Newfile
+                  8. rmdir - Used to delete empty directory.
+                             Ex. rmdir newdir
+                  9. rm    - Used to delete directory.
+                             Ex.rm file.txt 
+                  10. touch - Create a new blank file.
+                              Ex. touch newfile.txt
+Soft links : - Soft link is also called as symbolic link.
+             - Soft link contains the path for original file and not the contents.
+             - A soft link can link to a directory.
+             - Link across file systems: If you want to link files across the file systems you can only use symbolic/sof links.
+             - Command to create a soft link:
+               $ ln -s file.txt softlink.txt
+Hard links : - Each hard link linked file is assigned the same Inode value as the original.
+             - ls -l shows all the links with the link column shows number of links.
+             - Links have actual file content.
+             - Comand to create hard link:
+               $ ln file.txt hardlink.txt
+               
+ 
+                           
+ 
+ 
