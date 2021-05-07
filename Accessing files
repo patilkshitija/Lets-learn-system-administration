@@ -1,0 +1,31 @@
+ Basic file permission 
+ permission groups:
+ -owner :The owner permissions apply only the owner of the filr or directory.
+ -group :The group permission apply only to the group that has been assigned to the file or directory.
+ -all users :The all users permission apply to all other users on the system. 
+
+Permission Types:
+1. Read : Allows the contents of the file to be viewed.Read permission allows you to list the contents of the directory
+2. write : Allows to modify the contents of that file.
+3. Execute : Allows you to runt the file and execute a program or script.
+
+To view the permissons on file or directory the command is :
+         ls -l <directory/file>
+Sample output of the ls command : 
+         -rw-r--r-- 1 root root May 07 05 21 /etc/passwd
+         The 1st dast(-) indicates type of file (d for directory,s for special file, - for a regular file).
+         The next 3 characters (rw-)defines the owners permission to the file In this example the file owner has read and write permission only.
+         The next 3 characters (r--)  permission for the members of the same group as file owner(read only}
+         The last 3 characters (r--) permission for the other users(read only)
+         
+The numbers are binary representation of the rwx string.
+r=4
+w=2
+x=1
+So set a file to permission on file to read -rwxr----- you would enter "chamod 740 file".
+
+chown command to change owner and group assignments,the sytax is:
+chown owner:group filename
+So to change the owner of the file to user and group to family you enter
+chown user:family file.
+         
