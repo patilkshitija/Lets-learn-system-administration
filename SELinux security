@@ -1,0 +1,10 @@
+SELinux can run in one of following mode:
+    -Enforcing SELinux policy is enforced 
+    -Pemissive SELinux policy is not enforced
+
+1.getenforce: To see the current status of SELinux run the" getenforce" command.
+              $ getenforce
+              enforcing
+2.setenforce: The current SELinux status can also be changed with the "setenforce" command as shown below.
+              $ setenforce enforcing
+              
