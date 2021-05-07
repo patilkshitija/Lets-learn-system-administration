@@ -1,3 +1,7 @@
+Users and groups:
+                 - Linux was assigned to allow more than one user to have access to the system at the same time.
+                 - In order for this multiuser design to work properly, there needs to be a method to protect users from each other. 
+
 Groupadd: In linux there can be many users of a single system.
           groupadd command is used to create a new user group.
           Example:
@@ -13,6 +17,11 @@ Useradd: 'Useradd' command is low level utility that is used for adding user acc
                    changing the password for user developer
                    new password:
                    Retype new password:
+Usermod: user mod command used to change the attribute of already exist user account.
+         Syntax:
+         $ usermod[options] username
+         Ex. usermod -d developers
+                   
 To switch the user command is :
-su -username.
+"su -username"
                    
