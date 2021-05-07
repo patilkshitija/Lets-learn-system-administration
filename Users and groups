@@ -1,20 +1,3 @@
-Users and groups:
-                 - Linux was assigned to allow more than one user to have access to the system at the same time.
-                 - In order for this multiuser design to work properly, there needs to be a method to protect users from each other.  
-Read,Write and Execute permission:
-1. Read : Allows the contents of the file to be viewed.Read permission allows you to list the contents of the directory
-2. write : Allows to modify the contents of that file.
-3. Execute : Allows you to runt the file and execute a program or script.
-
-To view the permissons on file or directory the command is :
-         ls -l <directory/file>
-Sample output of the ls command : 
-         -rw-r--r-- 1 root root May 07 05 21 /etc/passwd
-         The 1st dast(-) indicates type of file (d for directory,s for special file, - for a regular file).
-         The next 3 characters (rw-)defines the owners permission to the file In this example the file owner has read and write permission only.
-         The next 3 characters (r--)  permission for the members of the same group as file owner(read only}
-         The last 3 characters (r--) permission for the other users(read only)
-         
 Groupadd: In linux there can be many users of a single system.
           groupadd command is used to create a new user group.
           Example:
