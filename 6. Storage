@@ -1,0 +1,44 @@
+Storage:
+ -Linux has robust systems and tooling to manage hardware devices, including storage drives. 
+ -In this article we’ll cover, at a high level, how Linux represents these devices and how raw storage is made into usable space on the server.
+What are Disk Partitions?
+ -Disk partitions are a way of breaking up a storage drive into smaller usable units.
+ -A partition is a section of a storage drive that can be treated in much the same way as a drive itself.
+ 
+ MBR:
+ MBR is the traditional partitioning system, which has been in use for over 30 years.
+ Because of its age, it has some serious limitations. 
+ Because of this, the fourth partition is typically set up as an “extended partition”, in which “logical partitions” can be created. 
+ This allows you to subdivide the last partition to effectively allow additional partitions.
+ 
+ GPT:
+ GPT is a more modern partitioning scheme that attempts to resolve some of the issues inherent with MBR.
+ Systems running GPT can have many more partitions per disk. This is usually only limited by the restrictions imposed by the operating system itself.  
+ GPT can also write a “protective MBR” which tells MBR-only tools that the disk is being used.
+ In most cases, GPT is the better choice unless your operating system or tooling prevent you from using it.
+ 
+ Steps to create a partitons:
+  1. List of partitions                      -> parted -l
+  2. Lable a partitions                      -> parted/dev/vdb mklabel msdos
+  3. Use mkpart to make a partiton           -> parted/dev/vdb -> p mkpart ->primary-> xfs->2048s ->1000MB ->p ->quit                                                                                                                 
+  4. Let the partition be created/setteled   -> udevadm settle
+  5. Attach the file system to the partition -> mkfs.xfs/dev/vdb
+  6. Create a mount point directory          -> df -h ->mkdir /archive
+  7. Add entry in fstab                      -> cat/etc/fstab -> lsblk/dev/vdb -> lsblk --fs/dev/vdb -> vi/etc/fstab
+  8. System daeman - reload                  -> mount/archive/ ->df -h ->cd/archive/ ->ls ->touch file.txt ->ls -> history
+  9. Mount the partition on the directory
+  10. Reboot
+  
+  Some commands as follow:
+  1. Lsblk --fs/dev/vdb  - list block with UUID
+  2. parted -l           - list partitions
+  3. parted/dev/vdb mklabel msdos - make label to a partion
+  4. mkpart              - create a patition 
+  5. udevadm settle      - wait till partition is registered successfully
+  6. mkfs.xfs/dev/vdb1   - format file system with XFS file system
+  7. systemctl daemon-reload - restart daemon service
+  
+  
+  
+  
+  
