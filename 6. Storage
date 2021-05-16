@@ -27,8 +27,8 @@ What are Disk Partitions?
   7. Add entry in fstab                      -> cat/etc/fstab -> lsblk/dev/vdb -> lsblk --fs/dev/vdb -> vi/etc/fstab
   8. System daeman - reload                  -> mount/archive/ ->df -h ->cd/archive/ ->ls ->touch file.txt ->ls -> history
   9. Mount the partition on the directory
-  10. Reboot
   
+
   Some commands as follow:
   1. Lsblk --fs/dev/vdb  - list block with UUID
   2. parted -l           - list partitions
